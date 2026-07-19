@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'counter.dart';
 
 class LoginPage extends StatefulWidget {
@@ -16,13 +17,19 @@ class _LoginPageState extends State<LoginPage> {
 
   String errorMessage = "";
 
-  // Login Function
-  void login() {
+  // Firebase Login Function
+  Future<void> login() async {
 
     String username = usernameController.text.trim();
     String password = passwordController.text.trim();
 
-    if (username == "admin" && password == "14307") {
+    try {
+
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: username,
+        password: password,
+      );
+
 
       Navigator.pushReplacement(
         context,
@@ -31,13 +38,20 @@ class _LoginPageState extends State<LoginPage> {
         ),
       );
 
-    } else {
+
+    } on FirebaseAuthException catch(e) {
 
       setState(() {
-        errorMessage = "Invalid Username or Password";
+
+        errorMessage = e.message ?? "Login Failed";
+
       });
+
     }
+
   }
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -62,9 +76,11 @@ class _LoginPageState extends State<LoginPage> {
 
         ),
 
+
         child: Padding(
 
           padding: const EdgeInsets.all(20),
+
 
           child: Center(
 
@@ -73,6 +89,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
 
                 children: [
+
 
                   const Text(
                     "Login",
@@ -83,13 +100,17 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
 
+
                   const SizedBox(height: 30),
+
+
 
                   // Username
 
                   SizedBox(
-                    width: 400,
-                    height: 50,
+
+                    width:400,
+                    height:50,
 
                     child: TextField(
 
@@ -97,17 +118,18 @@ class _LoginPageState extends State<LoginPage> {
 
                       decoration: InputDecoration(
 
-                        hintText: "Username",
+                        hintText:"Username",
 
                         prefixIcon: const Icon(Icons.person),
 
-                        filled: true,
+                        filled:true,
 
-                        fillColor: Colors.white,
+                        fillColor:Colors.white,
 
-                        border: OutlineInputBorder(
 
-                          borderRadius: BorderRadius.circular(15),
+                        border:OutlineInputBorder(
+
+                          borderRadius:BorderRadius.circular(15),
 
                         ),
 
@@ -117,155 +139,99 @@ class _LoginPageState extends State<LoginPage> {
 
                   ),
 
-                  const SizedBox(height: 15),
+
+
+                  const SizedBox(height:15),
+
 
                   // Password
-
                   SizedBox(
-                    width: 400,
-                    height: 50,
-
-                    child: TextField(
-
-                      controller: passwordController,
-
-                      obscureText: true,
-
-                      decoration: InputDecoration(
-
-                        hintText: "Password",
-
-                        prefixIcon: const Icon(Icons.lock),
-
-                        filled: true,
-
-                        fillColor: Colors.white,
-
-                        border: OutlineInputBorder(
-
-                          borderRadius: BorderRadius.circular(15),
-
+                    width:400,
+                    height:50,
+                    child:TextField(
+                      controller:passwordController,
+                      obscureText:true,
+                      decoration:InputDecoration(
+                        hintText:"Password",
+                        prefixIcon:const Icon(Icons.lock),
+                        filled:true,
+                        fillColor:Colors.white,
+                        border:OutlineInputBorder(
+                          borderRadius:BorderRadius.circular(15),
                         ),
-
                       ),
-
                     ),
-
                   ),
-
-                  const SizedBox(height: 10),
-
+                  const SizedBox(height:10),
                   // Forgot Password
-
                   SizedBox(
-
-                    width: 400,
-
-                    child: Align(
-
-                      alignment: Alignment.centerLeft,
-
-                      child: TextButton(
-
-                        onPressed: () {
-
+                    width:400,
+                    child:Align(
+                      alignment:Alignment.centerLeft,
+                      child:TextButton(
+                        onPressed:(){
                           ScaffoldMessenger.of(context).showSnackBar(
-
                             const SnackBar(
-
-                              content: Text(
+                              content:Text(
                                 "Forgot Password feature coming soon!",
                               ),
-
                             ),
-
                           );
-
                         },
-
-                        child: const Text(
-
+                        child:const Text(
                           "Forgot Password?",
-
-                          style: TextStyle(
-
-                            color: Colors.white,
-
-                            fontWeight: FontWeight.bold,
-
+                          style:TextStyle(
+                            color:Colors.white,
+                            fontWeight:FontWeight.bold,
                           ),
-
                         ),
-
                       ),
-
                     ),
-
                   ),
-
                   // Error Message
-
                   Text(
-
                     errorMessage,
-
-                    style: const TextStyle(
-
-                      color: Colors.red,
-
-                      fontSize: 16,
-
-                      fontWeight: FontWeight.bold,
-
+                    style:const TextStyle(
+                      color:Colors.red,
+                      fontSize:16,
+                      fontWeight:FontWeight.bold,
                     ),
-
                   ),
-
-                  const SizedBox(height: 20),
-
-                  // Login Button
-
+                  const SizedBox(height:20),
                   SizedBox(
+                    width:400,
+                    height:50,
+                    child:ElevatedButton(
+                      onPressed:login,
+                      style:ElevatedButton.styleFrom(
+                        backgroundColor:Colors.white,
+                        foregroundColor:Colors.white,
 
-                    width: 400,
-                    height: 50,
 
-                    child: ElevatedButton(
+                        shape:RoundedRectangleBorder(
 
-                      onPressed: login,
-
-                      style: ElevatedButton.styleFrom(
-
-                        backgroundColor: Colors.white,
-
-                        foregroundColor: Colors.white,
-
-                        shape: RoundedRectangleBorder(
-
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius:BorderRadius.circular(15),
 
                         ),
 
                       ),
 
-                      child: const Text(
+
+
+                      child:const Text(
 
                         "Login",
 
-                        style: TextStyle(
+                        style:TextStyle(
 
-                          fontSize: 18,
+                          fontSize:18,
 
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blueGrey,
+                          fontWeight:FontWeight.bold,
+                          color:Colors.blueGrey,
                         ),
-
                       ),
-
                     ),
-
                   ),
-
                 ],
 
               ),
