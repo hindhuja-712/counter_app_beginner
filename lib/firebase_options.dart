@@ -56,22 +56,22 @@ class DefaultFirebaseOptions {
     projectId: 'counter-app-beginner',
     storageBucket: 'counter-app-beginner.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBdgJcBRNrlUBRpwtmDUZ29s2TNsINVKz8',
     appId: '1:1082380782716:ios:b4e3e26211a12a2bbd8df9',
     messagingSenderId: '1082380782716',
     projectId: 'counter-app-beginner',
     storageBucket: 'counter-app-beginner.firebasestorage.app',
+    iosClientId: '1082380782716-a5lm4n2rn4gkqcb8ofa1muomfduv4r74.apps.googleusercontent.com',
     iosBundleId: 'com.example.counter',
   );
-
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBdgJcBRNrlUBRpwtmDUZ29s2TNsINVKz8',
     appId: '1:1082380782716:ios:b4e3e26211a12a2bbd8df9',
     messagingSenderId: '1082380782716',
     projectId: 'counter-app-beginner',
     storageBucket: 'counter-app-beginner.firebasestorage.app',
+    iosClientId: '1082380782716-a5lm4n2rn4gkqcb8ofa1muomfduv4r74.apps.googleusercontent.com',
     iosBundleId: 'com.example.counter',
   );
 
