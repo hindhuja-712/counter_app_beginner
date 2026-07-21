@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'counter.dart';
-
+import 'forgot_password.dart';
+import 'signup.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -37,60 +38,32 @@ class _LoginPageState extends State<LoginPage> {
           builder: (context) => const CounterPage(),
         ),
       );
-
-
     } on FirebaseAuthException catch(e) {
-
       setState(() {
-
         errorMessage = e.message ?? "Login Failed";
-
       });
-
     }
-
   }
-
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-
       body: Container(
-
         width: double.infinity,
         height: double.infinity,
-
         decoration: const BoxDecoration(
-
           image: DecorationImage(
-
             image: NetworkImage(
               "https://images.unsplash.com/photo-1682447278584-aeddb64620ce?w=700&auto=format&fit=crop&q=60",
             ),
-
             fit: BoxFit.cover,
-
           ),
-
         ),
-
-
         child: Padding(
-
           padding: const EdgeInsets.all(20),
-
-
           child: Center(
-
             child: SingleChildScrollView(
-
               child: Column(
-
                 children: [
-
-
                   const Text(
                     "Login",
                     style: TextStyle(
@@ -99,12 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.white,
                     ),
                   ),
-
-
-                  const SizedBox(height: 30),
-
-
-
+                  const SizedBox(height: 20),
                   // Username
 
                   SizedBox(
@@ -141,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
 
 
 
-                  const SizedBox(height:15),
+                  const SizedBox(height:20),
 
 
                   // Password
@@ -162,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  const SizedBox(height:10),
+                  const SizedBox(height:20),
                   // Forgot Password
                   SizedBox(
                     width:400,
@@ -170,12 +138,10 @@ class _LoginPageState extends State<LoginPage> {
                       alignment:Alignment.centerLeft,
                       child:TextButton(
                         onPressed:(){
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content:Text(
-                                "Forgot Password feature coming soon!",
-                              ),
-                            ),
+                          Navigator.push(context,
+                          MaterialPageRoute(
+                            builder: (context) => const ForgotPasswordPage(),
+                          ),
                           );
                         },
                         child:const Text(
@@ -215,9 +181,6 @@ class _LoginPageState extends State<LoginPage> {
                         ),
 
                       ),
-
-
-
                       child:const Text(
 
                         "Login",
@@ -232,6 +195,26 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
+                  const SizedBox(height:20),
+
+GestureDetector(
+  onTap: (){
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context)=> const SignupPage(),
+      ),
+    );
+  },
+  child: const Text(
+    "Create New Account",
+    style: TextStyle(
+      color: Colors.white,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+),
                 ],
 
               ),
