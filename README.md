@@ -1,4 +1,4 @@
-# 🔐 Flutter Firebase Authentication App
+# Counter App- Beginner Friendly
 
 A beginner-friendly Flutter application with a modern **glassmorphism UI** design that implements Login, Signup, and Forgot Password screens.
 
