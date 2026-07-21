@@ -1,45 +1,65 @@
-# 📱 Counter App - Flutter
+# 🔐 Flutter Firebase Authentication App
 
-A Flutter-based Counter Application developed to learn Flutter UI development, navigation, state management basics, and Firebase Authentication integration.
+A beginner-friendly Flutter application with a modern **glassmorphism UI** design that implements Login, Signup, and Forgot Password screens.
 
-This project is part of my Flutter learning journey where I implemented authentication flow, UI design, and Firebase connectivity.
+This project is built to learn Flutter UI development, navigation, and Firebase Authentication integration.
 
 ---
 
-## 🚀 Features
+## 📱 Project Preview
 
-### 🔐 Authentication
+A Flutter authentication app containing:
 
-* User Login Page
-* Firebase Authentication Integration
-* Secure user authentication flow
-* Forgot Password UI (In Progress)
+- Login Page
+- Signup Page
+- Forgot Password Page
+- Glassmorphism UI Design
+- Password visibility toggle
+- Firebase Authentication setup
 
-### 🔢 Counter Functionality
+---
 
-* Increment counter value
-* Decrement counter value
-* Reset counter value
-* User-friendly error handling
+## ✨ Features
+
+### 🔑 Login Page
+- User login interface
+- Username and password fields
+- Password visibility option
+- Navigation to Signup page
+- Forgot password navigation
+
+### 📝 Signup Page
+- Create new user account UI
+- Full name input
+- Email input
+- Password input
+- Confirm password input
+- Show/hide password option
+
+### 🔄 Forgot Password Page
+- Email input field
+- New password field
+- Confirm password field
+- Glass-style UI design
 
 ### 🎨 UI Features
-
-* Custom background images
-* Modern UI design
-* Glassmorphism UI components
-* Responsive layout using Flutter widgets
+- Full-screen background images
+- Glassmorphism card design
+- Blur effects using BackdropFilter
+- Rounded input fields
+- Responsive layout
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Technology              | Purpose                                       |
-| ----------------------- | --------------------------------------------- |
-| Flutter                 | Cross-platform mobile application development |
-| Dart                    | Programming language                          |
-| Firebase Authentication | User authentication                           |
-| Firebase Core           | Firebase initialization                       |
-| VS Code                 | Development environment                       |
+| Technology | Purpose |
+|---|---|
+| Flutter | Cross-platform UI development |
+| Dart | Programming language |
+| Firebase Authentication | User authentication |
+| Android Studio / VS Code | Development environment |
+| Git & GitHub | Version control |
 
 ---
 
@@ -48,44 +68,41 @@ This project is part of my Flutter learning journey where I implemented authenti
 ```
 lib/
 │
-├── main.dart                 # Application entry point
-│
-├── login.dart                # User login screen
-│
-├── counter.dart              # Counter functionality screen
-│
-├── forgot_password.dart      # Password reset UI
-│
-└── firebase_options.dart     # Firebase configuration
+├── main.dart
+├── login.dart
+├── signup.dart
+├── forgot_password.dart
+├── counter.dart
+└── firebase_options.dart
 ```
 
 ---
 
-## 🔥 Firebase Integration
+## 📦 Packages Used
 
-Firebase is integrated to provide authentication services.
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
 
-Implemented:
-
-* Firebase project setup
-* Firebase Core initialization
-* Firebase Authentication package
-* Authentication flow preparation
+  firebase_core:
+  firebase_auth:
+```
 
 ---
 
-## ⚙️ Installation & Setup
+## 🚀 Getting Started
 
 ### 1. Clone the repository
 
 ```bash
-git clone hindhuja_712
+git clone https://github.com/hindhuja-712/counter_app_beginner.git
 ```
 
-### 2. Navigate to project directory
+### 2. Navigate to project folder
 
 ```bash
-cd counter_app
+cd counter_app_beginner
 ```
 
 ### 3. Install dependencies
@@ -102,39 +119,74 @@ flutter run
 
 ---
 
-## 📌 Future Improvements
+## 🔥 Firebase Setup
 
-* Complete Firebase Forgot Password functionality
-* Create Signup page with Firebase Authentication
-* Add user profile management
-* Improve UI animations
-* Add dark mode support
+This project uses Firebase Authentication.
+
+Steps:
+
+1. Create a Firebase project
+2. Register your Flutter application
+3. Enable Email/Password Authentication
+4. Add Firebase configuration files
+5. Run:
+
+```bash
+flutterfire configure
+```
 
 ---
 
-## 🎯 Learning Outcomes
+## 📸 Screens
+
+### Login Screen
+- User authentication interface
+
+### Signup Screen
+- Account creation interface
+
+### Forgot Password Screen
+- Password recovery interface
+
+---
+
+## 📚 Learning Outcomes
 
 Through this project, I learned:
 
-* Flutter widget structure
-* Stateless and Stateful widgets
-* Navigation between screens
-* Firebase integration
-* UI designing with Flutter
-* Git and GitHub workflow
+- Flutter widget structure
+- StatelessWidget and StatefulWidget
+- Widget tree concept
+- Container and BoxDecoration
+- Glassmorphism UI creation
+- TextField customization
+- Navigation between screens
+- Firebase integration basics
+- Git and GitHub workflow
 
 ---
 
-## 👩‍💻 Author
+## 🔮 Future Improvements
 
-**Hindhuja.G**
+- Complete Firebase Login Authentication
+- Complete Firebase Signup Authentication
+- Implement Firebase Forgot Password email reset
+- Add form validation
+- Add loading indicators
+- Improve UI animations
+- Add user profile page
 
-Electronics and Communication Engineering
+---
+
+## 👩‍💻 Developer
+
+**Hindhuja**
 
 Flutter Developer Intern Aspirant
 
-GitHub: hindhuja-712
+GitHub:
+https://github.com/hindhuja-712
 
 ---
 
-⭐ If you find this project useful, feel free to explore and give feedback.
+⭐ If you like this project, consider giving it a star!
