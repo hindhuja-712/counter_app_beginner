@@ -62,6 +62,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1082380782716',
     projectId: 'counter-app-beginner',
     storageBucket: 'counter-app-beginner.firebasestorage.app',
+    androidClientId: '1082380782716-3nhom26qm1bposnb1ac0su0qohfk9d1m.apps.googleusercontent.com',
     iosClientId: '1082380782716-a5lm4n2rn4gkqcb8ofa1muomfduv4r74.apps.googleusercontent.com',
     iosBundleId: 'com.example.counter',
   );
@@ -71,6 +72,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1082380782716',
     projectId: 'counter-app-beginner',
     storageBucket: 'counter-app-beginner.firebasestorage.app',
+    androidClientId: '1082380782716-3nhom26qm1bposnb1ac0su0qohfk9d1m.apps.googleusercontent.com',
     iosClientId: '1082380782716-a5lm4n2rn4gkqcb8ofa1muomfduv4r74.apps.googleusercontent.com',
     iosBundleId: 'com.example.counter',
   );
