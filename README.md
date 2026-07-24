@@ -175,8 +175,6 @@ Through this project, I learned:
 
 # 🚀 Future Improvements
 
-- Complete Forgot Password functionality
-- Add Google Sign-In
 - Add user profile management
 - Add dark mode support
 - Improve animations
