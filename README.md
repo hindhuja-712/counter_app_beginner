@@ -87,26 +87,26 @@ Implemented:
 
 ---
 
-# 📸 Screenshots
+## 📸 Screenshots
 
-## Login Screen
+### 🔐 Login Screen
 
-![Login Screen](screenshots/screenshots/login.png)
-
-
-## Signup Screen
-
-![Signup Screen](screenshots/screenshots/signup.png)
+![Login Screen](screenshots/screenshots/01_login_screen.png)
 
 
-## Counter Screen
+### 🔑 Forgot Password Screen
 
-![Counter Screen](screenshots/screenshots/counter.png)
+![Forgot Password](screenshots/screenshots/02_forgot_password.png)
 
 
-## Forgot Password Screen
+### 🔢 Counter Screen
 
-![Forgot Password Screen](screenshots/screenshots/forgot_password.png)
+![Counter Screen](screenshots/screenshots/03_counter_screen.png)
+
+
+### 📝 Signup Screen
+
+![Signup Screen](screenshots/screenshots/04_sign_up.png)
 
 
 ---
